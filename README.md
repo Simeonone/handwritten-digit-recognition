@@ -45,3 +45,66 @@ The training script is included in the `mnist_cnn.py` file. To train the model, 
 
 ```bash
 python mnist_cnn.py
+```
+This will:
+
+- Load and preprocess the MNIST dataset.
+- Build and compile the CNN model.
+- Train the model on the training data.
+- Evaluate the model on the test data.
+- Save the trained model to a file named mnist_cnn_model.h5.
+
+## Testing custom images
+
+You can test the trained model on your own handwritten digit images by following these steps:
+
+1. Prepare Custom Images
+
+Create your own handwritten digit images and save them in the my_digits/ directory. Ensure the images are on a plain white background and saved as PNG or JPEG files.
+Run the Prediction Script
+
+Use the script included in the mnist_cnn.py file to preprocess your images and make predictions:
+```
+python mnist_cnn.py
+```
+The script will preprocess your images, use the trained model to make predictions, and print the predicted digits.
+
+## Contributing
+Contributions are welcome! If you have any improvements or suggestions, please create a pull request or open an issue.
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+
+### Instructions to Push the Project to GitHub
+
+1. **Initialize a Git Repository**
+    ```bash
+    git init
+    ```
+
+2. **Add Files to the Repository**
+    ```bash
+    git add .
+    ```
+
+3. **Commit the Files**
+    ```bash
+    git commit -m "Initial commit"
+    ```
+
+4. **Create a New Repository on GitHub**
+    - Go to GitHub and create a new repository (e.g., `handwritten-digit-recognition`).
+
+5. **Add the Remote Repository**
+    ```bash
+    git remote add origin https://github.com/your-username/handwritten-digit-recognition.git
+    ```
+
+6. **Push the Files to GitHub**
+    ```bash
+    git push -u origin master
+    ```
+
+This README should give a comprehensive guide to anyone wanting to understand, set up, and run your project. You can adjust the content as needed to better fit your specific project details.
+
