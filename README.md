@@ -105,6 +105,3 @@ This project is licensed under the MIT License. See the LICENSE file for details
     ```bash
     git push -u origin master
     ```
-
-This README should give a comprehensive guide to anyone wanting to understand, set up, and run your project. You can adjust the content as needed to better fit your specific project details.
-
