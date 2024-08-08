@@ -1,107 +1,72 @@
-# Handwritten Digit Recognition with CNN
+# MNIST Digit Recognition with TensorFlow
 
-This project implements a Convolutional Neural Network (CNN) to recognize handwritten digits using the MNIST dataset. The model is trained using TensorFlow and Keras, and it can be tested on custom images of handwritten digits.
+This project implements a Convolutional Neural Network (CNN) for recognizing handwritten digits using the MNIST dataset. It also includes functionality for classifying user-input images.
 
-## Table of Contents
-- [Overview](#overview)
-- [Setup Instructions](#setup-instructions)
-- [Training the Model](#training-the-model)
-- [Testing Custom Images](#testing-custom-images)
-- [Contributing](#contributing)
-- [License](#license)
+## Features
 
-## Overview
+- CNN model trained on the MNIST dataset
+- Data augmentation to improve model generalization
+- Early stopping and learning rate reduction callbacks
+- Ability to process and classify user-input images
 
-The goal of this project is to build a CNN that can accurately classify images of handwritten digits (0-9). The MNIST dataset, which contains 60,000 training images and 10,000 test images, is used to train and evaluate the model.
+## Requirements
 
-## Setup Instructions
+- Python 3.8+
+- TensorFlow 2.17.0
+- NumPy
+- Matplotlib
+- OpenCV
 
-1. **Clone the Repository**
+For a complete list of dependencies, see `requirements.txt`.
 
-    ```bash
-    git clone https://github.com/Simeonone/handwritten-digit-recognition.git
-    cd handwritten-digit-recognition
-    ```
+## Installation
 
-2. **Create a Virtual Environment**
+1. Clone this repository:
+   
+`git clone https://github.com/Simeonone/handwritten-digit-recognition.git`
 
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```
+`cd handwritten-digit-recognition`
 
-3. **Install Dependencies**
+2. Create a virtual environment (optional but recommended):
+  
+`python -m venv venv`
 
-    ```bash
-    pip install tensorflow
-    pip install numpy
-    pip install matplotlib
-    pip install opencv-python
-    ```
+`source venv/bin/activate`  On Windows, use `venv\Scripts\activate`
 
-## Training the Model
+3. Install the required packages:
 
-The training script is included in the `mnist_cnn.py` file. To train the model, simply run the script:
+`pip install -r requirements.txt`
 
-```bash
-python mnist_cnn.py
-```
-This will:
+## Usage
 
-- Load and preprocess the MNIST dataset.
-- Build and compile the CNN model.
-- Train the model on the training data.
-- Evaluate the model on the test data.
-- Save the trained model to a file named mnist_cnn_model.h5.
+1. Train the model and evaluate on MNIST dataset:
 
-## Testing custom images
+`python mnist_cnn.py`
 
-You can test the trained model on your own handwritten digit images by following these steps:
+2. To classify your own image:
+- Uncomment the user-input image processing section at the end of `mnist_cnn.py`
+- Replace `'path/to/user/image.jpg'` with the path to your image
+- Run the script again
 
-1. Prepare Custom Images
+## Model Architecture
 
-Create your own handwritten digit images and save them in the my_digits/ directory. Ensure the images are on a plain white background and saved as PNG or JPEG files.
-Run the Prediction Script
+The CNN model consists of:
+- 2 Convolutional layers with ReLU activation
+- 2 MaxPooling layers
+- Flatten layer
+- Dense layer with ReLU activation and Dropout
+- Output Dense layer with Softmax activation
 
-Use the script included in the mnist_cnn.py file to preprocess your images and make predictions:
-```
-python mnist_cnn.py
-```
-The script will preprocess your images, use the trained model to make predictions, and print the predicted digits.
+## Results
+
+The model achieves 0.9940000176429749 accuracy on the MNIST test set.
 
 ## Contributing
-Contributions are welcome! If you have any improvements or suggestions, please create a pull request or open an issue.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+Contributions, issues, and feature requests are welcome. 
 
 
-### Instructions to Push the Project to GitHub
+## Acknowledgments
 
-1. **Initialize a Git Repository**
-    ```bash
-    git init
-    ```
-
-2. **Add Files to the Repository**
-    ```bash
-    git add .
-    ```
-
-3. **Commit the Files**
-    ```bash
-    git commit -m "Initial commit"
-    ```
-
-4. **Create a New Repository on GitHub**
-    - Go to GitHub and create a new repository (e.g., `handwritten-digit-recognition`).
-
-5. **Add the Remote Repository**
-    ```bash
-    git remote add origin https://github.com/your-username/handwritten-digit-recognition.git
-    ```
-
-6. **Push the Files to GitHub**
-    ```bash
-    git push -u origin master
-    ```
+- MNIST dataset providers
+- TensorFlow and Keras documentation
